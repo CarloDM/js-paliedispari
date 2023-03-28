@@ -4,39 +4,36 @@ console.log ('ciao')
 // 3 ma come piu nello specifico?---uhm..
 
 let parola = prompt();
-let parolaFor = [];
-let parolaInv = [];
 
 console.log('la parola inserita è ', parola);
 
 // dividere la string dentro 
 
-// ci vuole un ciclo while per verificare lettera per lettera
+// ci vuole un ciclo  per verificare lettera per lettera
 
-function palindroma(parola){
-}
+function palidroma(parolaV){
+  
+  let parolaFor = [];
+  let parolaInv = [];
 
-for (let i = 0; i < parola.length; i++) {
+  for (let i = 0; i < parolaV.length; i++) {
 
-    console.log('for',parola[i])
-    parolaFor.push(parola[i])
+      parolaFor.push(parolaV[i])
+  }
+  
+  for (let i = parolaV.length; i > 0; i--) {
+    
+      parolaInv.push(parolaV[i-1])
+  }
+  
+  if (parolaFor.toString() === parolaInv.toString()){
+    console.warn('la parolaV è palidroma')
+    return true;
+  }else{
+    console.warn('la parola non è palidroma')
+    return false;
+  }
   
 }
 
-console.log(parola.length)
-
-for (let i = parola.length; i > 0; i--) {
-  
-    console.log('inv',parola[i-1])
-    parolaInv.push(parola[i-1])
-}
-
-console.log('parolafor',parolaFor.toString())
-console.log('parolainv',parolaInv.toString())
-
-
-if (parolaFor.toString() === parolaInv.toString()){
-  console.warn('la parola è palindroma')
-}else{
-  console.warn('la parola non è palindroma')
-}
+console.log('palidroma', palidroma(parola))
