@@ -57,10 +57,20 @@ console.log('cpu è',cpuChoice,cpuNum);
 
 const sum = (userNum + cpuNum) % 2;
 
-console.log(sum)
 
 if (!sum) {
   console.log('pari')
-} else {
+  if (userChoice == 'pari'){
+    console.log('utente vince cpu perde')
+  }else{
+    console.log('utente perd cpu vince')
+  }
+
+}else{
   console.log('dispari')
+  if (userChoice == 'dispari'){
+    console.log('utente vince cpu perde')
+  }else{
+    console.log('utente perd cpu vince')    
+  }
 }
